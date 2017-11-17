@@ -92,12 +92,16 @@ These steps can be used to validate the Cosmos-DB APIs via CQLSH shell
 
 4.	Run the following: 
     ```
+    
+	set SSL_VERSION=TLSv1_2
+	set SSL_VALIDATE=false
+	set SSL_CERTFILE=[path-to-ssl-cer] 
 	set CQLSH_PORT=10350 
-    cqlsh -u [nameOfCosmosDBAccount] -p [accountKeyOfCosmosDBAccount] 
+    	cqlsh -u [nameOfCosmosDBAccount] -p [accountKeyOfCosmosDBAccount] --ssl
 	  ```
     On Windows, run the following:
 	  ```
-    $python\python.exe "{Path to} cassandra\bin\cqlsh.py" <IPADDRESS> <PORT> --   connect-timeout=600 --request-timeout=600 -u <accountName> -p <password> 
+    $python\python.exe "{Path to} cassandra\bin\cqlsh.py" <IPADDRESS> <PORT> -ssl --connect-timeout=600 --request-timeout=600 -u <accountName> -p <password> 
     ```
 5.	This will spin up a shell on which you can execute CQL. 
     Create the keyspace & tables using the cql script given at azure-cosmosdb-cassandra-scala-examples/src/main/resources/cassandra-on-cosmosdb-setup.cql
