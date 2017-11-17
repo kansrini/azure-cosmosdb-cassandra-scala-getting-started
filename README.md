@@ -40,12 +40,11 @@ One of the supported APIs on Azure Cosmos DB is the Cassandra API, which provide
 			  "auth": {
 				"username": "<Cassandra endpoint username>",
 				"password": "<Cassandra endpoint password>",
-				"ssl":
-					  {
-						"filepath": "<Keystore filepath>"
-						"password": "<keystore password>"
-						"algorithm": "TLS_RSA_WITH_AES_128_CBC_SHA"
-					  }
+				"ssl": {
+					"filepath": "<Keystore filepath>"
+					"password": "<keystore password>"
+					"algorithm": "TLS_RSA_WITH_AES_128_CBC_SHA"
+				}
 			  }
 			}
 		  }
